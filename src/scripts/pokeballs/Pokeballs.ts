@@ -127,6 +127,16 @@ class Pokeballs implements Feature {
                 }
                 return moonCycleBonus;
             }, 1250, 'Increased catch rate by the light of the moon', new RouteKillRequirement(10, GameConstants.Region.johto, 34)),
+            new Pokeball(GameConstants.Pokeball.Netball, (opts) => {
+                // following lines of code taken from CoPilot's suggestion
+                const types = pokemonMap[opts.pokemon].type;
+                if (types.includes(PokemonType.Water) || types.includes(PokemonType.Bug)) {
+                    return 15;
+                } 
+                else {
+                    return 0;
+                }               
+            }, 1250, 'Increased catch rate for Water and Bug type Pokémon', new RouteKillRequirement(10, GameConstants.Region.kanto, 1))
         ];
         this.selectedTitle = ko.observable('');
         this.selectedSelection = ko.observable();
