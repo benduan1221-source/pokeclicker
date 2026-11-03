@@ -67,6 +67,7 @@ const pokeLeagueShop = () => new Shop([
 //Kanto Shops
 const ViridianCityShop = new Shop([
     ItemList.Pokeball,
+    ItemList.Netball,
     ItemList.xAttack,
     ItemList.xClick,
     ItemList.Dungeon_ticket,
