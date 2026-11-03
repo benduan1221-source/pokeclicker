@@ -79,10 +79,6 @@ export function typeIdToString(id: number) {
     return PokemonType[id];
 }
 
-export function getNetballCatchBonus(types: PokemonType[]): number {
-    return types.includes(PokemonType.Water) || types.includes(PokemonType.Bug) ? 15 : 0;
-}
-
 export function getImage(pokemonId: number, shiny: boolean = undefined, gender: BattlePokemonGender = undefined, shadow: ShadowStatus = undefined): string {
     let src = 'assets/images/';
     let showShiny = shiny;
